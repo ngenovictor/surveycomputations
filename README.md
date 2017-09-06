@@ -10,3 +10,11 @@
 3. JavaScript
 4. HTML
 5. CSS
+
+**Setup Instructions**
+```commandline
+$ git clone https://github.com/ngenovictor/surveycomputations.git
+$ cd surveycomputations
+$ python3 manage.py runserver
+
+```
