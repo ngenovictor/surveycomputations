@@ -6,6 +6,7 @@ class AreaCalculator(object):
         """
         Given a set of coordinates return area
         :param coordinates:
+        :param precision:
         :return area:
         """
         area = 0
@@ -21,5 +22,6 @@ class AreaCalculator(object):
         for i in range(len(coordinates)):
             area = area + (x_points[j]+x_points[i]) * (y_points[j]-y_points[i])
             j = i
-
-        return area/2
+        area = area/2
+        result = round(area, precision)
+        return result
