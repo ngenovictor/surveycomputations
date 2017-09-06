@@ -2,7 +2,7 @@ class AreaCalculator(object):
     """
     This will contain all methods to compute area of parcels based on various factors
     """
-    def area_with_coordinates(self, coordinates):
+    def area_with_coordinates(self, coordinates, precision):
         """
         Given a set of coordinates return area
         :param coordinates:

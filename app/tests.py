@@ -7,10 +7,15 @@ class CalculationsTestCase(UnitTestCase):
 
     def test_given_triangle_coordinates_with_coordinates_returns_correct_area(self):
         coordinates = [(4, 0), (0, 0), (0, 3)]
-        area = AreaCalculator().area_with_coordinates(coordinates)
+        area = AreaCalculator().area_with_coordinates(coordinates,1)
         self.assertEqual(6.0, area)
 
     def test_given_rectangle_coordinates_with_coordinates_returns_correct_area(self):
         coordinates = [(4, 0), (0, 0), (0, 3), (4, 3)]
-        area = AreaCalculator().area_with_coordinates(coordinates)
+        area = AreaCalculator().area_with_coordinates(coordinates,1)
         self.assertEqual(12.0, area)
+
+    def test_given_actual_world_coordinated_returns_correct_area(self):
+        coordinates = [(780481.558601328, 9934959.79893969), (781076.259852303, 9920686.96891631), (767228.21643676, 9920092.26766534), (766803.429828921, 9933260.65250834)]
+        area = AreaCalculator().area_with_coordinates(coordinates,8)
+        self.assertEqual(189422538.83016014, area) 
