@@ -6,39 +6,20 @@
     </div>
     <hr>
     <form action={% url "compute_area" %} method="GET">
+        <div class="btn btn-outline-success" id="add-coordinate-inputs">
+            Add More Form Inputs Current:<span id="point_number">1(Default)</span>
+        </div>
+        <input type="number" hidden id="point_number_input" name="point_number" value="1">
         <div class="row container">
-            <div class="col-md-6 red">
+            <div class="col-md-4" id="point-inputs">
                 <div class="form-group">
-                    <label for="coordinateX1">X of Point 1</label>
-                    <input type="number" id="coordinateX1" name="coordinateX1"class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="coordinateY1">Y of Point 1</label>
-                    <input type="number" id="coordinateY1" name="coordinateY1" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6 blue">
-                <div class="form-group">
-                    <label for="coordinateX2">X of Point 2</label>
-                    <input type="number" id="coordinateX2" name="coordinateX2" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="coordinateY2">Y of Point 2</label>
-                    <input type="number" id="coordinateY2" class="form-control" name="coordinateY2">
-                </div>
-            </div>
-            <div class="col-md-6 green">
-                <div class="form-group">
-                    <label for="coordinateX3">X of Point 3</label>
-                    <input type="number" id="coordinateX3" name="coordinateX3" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="coordinateY3">Y of Point 3</label>
-                    <input type="number" id="coordinateY3" name="coordinateY3" class="form-control">
+                    <label>(X,Y) of Point 1</label>
+                    <input type="number" id="coordinateX1" name="coordinateX1" class="form-control" placeholder="X1">
+                    <input type="number" id="coordinateY1" name="coordinateY1" class="form-control" placeholder="Y1">
                 </div>
             </div>
         </div>
-        <div class="container form-group">
+        <div class="container form-group col-md-3">
             <label for="precision">Define precision for the results</label>
             <input type="number" class="form-control" id="precision" name="precision">
         </div>

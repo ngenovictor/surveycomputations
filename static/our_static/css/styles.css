@@ -7,3 +7,6 @@
 .green{
   background-color: greenyellow;
 }
+span#point_number{
+  color: red;
+}
