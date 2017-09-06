@@ -1,4 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-    This is the home page
+    <h1>Area computation</h1>
+    <div>
+        <p>Compute the area of a polygon given coordinate values</p>
+    </div>
+    <hr>
+    <form action={% url "compute_area" %} method="GET">
+        <div class="row container">
+            <div class="col-md-6 red">
+                <div class="form-group">
+                    <label for="coordinateX1">X of Point 1</label>
+                    <input type="number" id="coordinateX1" name="coordinateX1"class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="coordinateY1">Y of Point 1</label>
+                    <input type="number" id="coordinateY1" name="coordinateY1" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6 blue">
+                <div class="form-group">
+                    <label for="coordinateX2">X of Point 2</label>
+                    <input type="number" id="coordinateX2" name="coordinateX2" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="coordinateY2">Y of Point 2</label>
+                    <input type="number" id="coordinateY2" class="form-control" name="coordinateY2">
+                </div>
+            </div>
+            <div class="col-md-6 green">
+                <div class="form-group">
+                    <label for="coordinateX3">X of Point 3</label>
+                    <input type="number" id="coordinateX3" name="coordinateX3" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="coordinateY3">Y of Point 3</label>
+                    <input type="number" id="coordinateY3" name="coordinateY3" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="container form-group">
+            <label for="precision">Define precision for the results</label>
+            <input type="number" class="form-control" id="precision" name="precision">
+        </div>
+        <div class="container">
+            <button type="submit" class="btn btn-outline-success">Compute Area</button>
+        </div>
+    </form>
 {% endblock content %}
