@@ -3,7 +3,7 @@ from unittest import TestCase as UnitTestCase
 from .calculations import AreaCalculator
 
 
-class CalculationsTestCase(UnitTestCase):
+class AreaCalculationsTestCase(UnitTestCase):
 
     def test_given_triangle_coordinates_with_coordinates_returns_correct_area(self):
         coordinates = [(4, 0), (0, 0), (0, 3)]

@@ -18,9 +18,8 @@ def compute_area(request):
     coordinates = []
     for i in range(number_of_points):
         x_string = "coordinateX" + str(i+1)
-        print(x_string)
         y_string = "coordinateY" + str(i+1)
-        print(y_string)
+
         point = (int(request.GET.get(x_string)), int(request.GET.get(y_string)))
         coordinates.append(point)
 

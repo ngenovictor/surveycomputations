@@ -20,6 +20,8 @@ class AreaCalculator(object):
             y_points.append(coordinate_points[1])
 
         for i in range(len(coordinates)):
+            # formula obtained online at the following link
+            # http://link
             area = area + (x_points[j]+x_points[i]) * (y_points[j]-y_points[i])
             j = i
         area = area/2
