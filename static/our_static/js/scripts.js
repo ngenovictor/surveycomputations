@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var point_numbers = 1;
+    var point_numbers = 3;
     $("#add-coordinate-inputs").click(function (event) {
         event.preventDefault();
         point_numbers+=1;
