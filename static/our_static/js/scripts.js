@@ -6,9 +6,14 @@ $(document).ready(function(){
         console.log(point_numbers);
         $("#point-inputs").append(
             "<div class='form-group'>"+
-                "<label>(X,Y) of Point "+point_numbers+"</label>"+
-                "<input type='number' id='coordinateX"+point_numbers+"' name='coordinateX"+point_numbers+"' class='form-control' placeholder='X"+point_numbers+"'/>"+
-                "<input type='number' id='coordinateY"+point_numbers+"' name='coordinateY"+point_numbers+"' class='form-control' placeholder='Y"+point_numbers+"'/>"+
+                "<div  class='input-group'>" +
+                    "<div class='input-group-addon'>X"+point_numbers+"</div>" +
+                    "<input type='number' id='coordinateX"+point_numbers+"' name='coordinateX"+point_numbers+"' class='form-control'/>"+
+                "</div>"+
+                "<div  class='input-group'>" +
+                    "<div class='input-group-addon'>Y"+point_numbers+"</div>" +
+                    "<input type='number' id='coordinateY"+point_numbers+"' name='coordinateY"+point_numbers+"' class='form-control'/>"+
+                "</div>"+
             "</div>"
         );
         $("input#point_number_input").attr("value", point_numbers.toString());
