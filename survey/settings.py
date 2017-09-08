@@ -25,7 +25,7 @@ SECRET_KEY = '2jh=t3pr6@10!di4a_9%3-!20bkg92r3zjtfopc%3k+l%-74=8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['surveytools.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'surveytools.herokuapp.com']
 
 
 # Application definition
@@ -117,11 +117,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_root")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static", "static_root")
 STATICFILES_DIRS = [
-os.path.join(BASE_DIR, "static", "our_static")
+    os.path.join(PROJECT_ROOT, "static", "our_static")
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media_root")
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", "media_root")
 MEDIA_URL = "/media/"
