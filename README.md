@@ -1,4 +1,7 @@
 ## Survey Computations App
+As seen on [link](https://surveytools.herokuapp.com/)
+
+This is an app that can be used by a surveyor out in the field to do simple computations.
 
 **Specs**
 1. Enables surveyor compute area of a polygon given coordinates
