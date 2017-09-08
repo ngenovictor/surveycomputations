@@ -26,4 +26,4 @@ class AreaCalculator(object):
             j = i
         area = area/2
         result = round(area, precision)
-        return result
+        return abs(result)
