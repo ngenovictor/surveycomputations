@@ -1,5 +1,5 @@
 ## Survey Computations App
-As seen on [link](https://surveytools.herokuapp.com/)
+As seen on [https://surveytools.herokuapp.com/](https://surveytools.herokuapp.com/)
 
 This is an app that can be used by a surveyor out in the field to do simple computations.
 
