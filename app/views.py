@@ -11,6 +11,15 @@ def index(request):
     return render(request, template, context)
 
 
+def about(request):
+    template = "about.html"
+    title = "About"
+    context = {
+        "title": title
+    }
+    return render(request, template, context)
+
+
 def compute_area(request):
     template = "compute_area.html"
     title = "Area Result"
