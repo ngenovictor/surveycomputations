@@ -25,7 +25,7 @@ SECRET_KEY = '2jh=t3pr6@10!di4a_9%3-!20bkg92r3zjtfopc%3k+l%-74=8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['surveytools.herokuapp.com']
 
 
 # Application definition
