@@ -24,6 +24,67 @@
         <p>The source code is available on <a href="https://github.com/ngenovictor/surveycomputations" target="_blank">Github</a></p>
         <p>Follow me on <a href="https://twitter.com/veekay254" target="_blank">Twitter</a></p>
         <p>Feel free to <a href="mailto:ngenovictor321@gmail.com">contact me</a></p>
+
+         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feed_back_inputs">
+          Click Here To Give Feedback
+        </button>
     </div>
 
+
+
+<!-- Modal -->
+    <div class="modal fade" id="feed_back_inputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">We appreciate Feedback</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="feedback_form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" name="name" required id="feed_back_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email:</label>
+                            <input type="email" class="form-control" name="email" required id="feed_back_email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" required id="feed_back_message"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Send Feedback</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{#message feedback modal#}
+    <div class="modal fade" id="thank_you_feedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                    <div class="modal-body" id="feedback_message">
+                    Thank you for your feedback.
+                    </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{# end modal#}
 {% endblock content %}

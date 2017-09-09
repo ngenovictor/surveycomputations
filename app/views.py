@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .calculations import AreaCalculator
+from django.http import JsonResponse
+
 
 
 def index(request):
@@ -18,6 +20,11 @@ def about(request):
         "title": title
     }
     return render(request, template, context)
+
+
+def give_feedback(request):
+    message = {"message": "true"}
+    return JsonResponse(message)
 
 
 def compute_area(request):
