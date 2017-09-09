@@ -23,7 +23,7 @@ $(document).ready(function(){
     $("form#feedback_form").submit(function (event) {
         event.preventDefault();
         var name = $("input#feed_back_name").val();
-        
+
         var email = $("input#feed_back_email").val();
 
         var message = $("textarea#feed_back_message").val();
