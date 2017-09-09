@@ -28,6 +28,7 @@ $(document).ready(function(){
 
         var message = $("textarea#feed_back_message").val();
 
+        message = message.replace(/(?:\n)/g, '<putNewLineHere>');
 
         var feedback_url = $("input#feedback_url").val();
 
