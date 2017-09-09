@@ -25,10 +25,13 @@ $(document).ready(function(){
         var name = $("input#feed_back_name").val();
         var email = $("input#feed_back_email").val();
         var message = $("textarea#feed_back_message").val();
+
+        var feedback_url = $("input#feedback_url").val();
+
         $("#feed_back_inputs").modal("toggle");
-        console.log("clicked submit");
+
         $.ajax({
-            url:"http://localhost:8000/give_feedback",
+            url:feedback_url+"?name=name&&email=email&&message=message",
             success:function(data){
                 console.log(data);
                 $("#feedback_message").text(data["message"]);

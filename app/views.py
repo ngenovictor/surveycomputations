@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .calculations import AreaCalculator
 from django.http import JsonResponse
-
-
+from django.http import *
+import requests
 
 def index(request):
     template = "index.html"
@@ -23,8 +23,23 @@ def about(request):
 
 
 def give_feedback(request):
-    message = {"message": "true"}
-    return JsonResponse(message)
+    name = request.GET.get("name")
+    email = request.GET.get("email")
+    message = request.GET.get("message")
+
+    if not name or not email or not message:
+        response_message = {"message": "something missing"}
+        return JsonResponse(response_message)
+    else:
+        data = {
+            "name": name,
+            "email": email,
+            "message": message
+        }
+        requests.get("https://victormailapp.herokuapp.com/surveytools_feedback", data)
+
+        response_message = {"message": "Thank You for Your feedback"}
+        return JsonResponse(response_message)
 
 
 def compute_area(request):
