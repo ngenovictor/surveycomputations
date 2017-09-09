@@ -8,5 +8,11 @@
   background-color: greenyellow;
 }
 #point_number{
-  color: red;!important;
+  color: red;
+}
+.content{
+  padding-left: 20px;
+}
+.row{
+  margin:0;
 }
