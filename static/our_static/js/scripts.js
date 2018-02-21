@@ -42,5 +42,24 @@ $(document).ready(function(){
                 $("#thank_you_feedback").modal("toggle");
             }
         })
-    })
+    });
+    var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets'
+    });
+    var none_layer = L.tileLayer('', {
+        maxZoom: 18,
+        attribution: 'Empty'
+    });
+    var map = L.map('map', {
+        center: [-1.0500, 37.0833],
+        zoom: 10,
+        minZoom: 2,
+        maxZoom: 18,
+        zoomControl: false,
+        layers: [osmlayer,]
+    });
 });
