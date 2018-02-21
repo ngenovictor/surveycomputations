@@ -125,3 +125,10 @@ STATICFILES_DIRS = [
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media_root")
 MEDIA_URL = "/media/"
+
+try:
+    from .local_settings import *
+    #  define local development settings
+except ImportError:
+    # define production settings
+    DEBUG = False
