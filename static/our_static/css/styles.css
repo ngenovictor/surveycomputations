@@ -36,6 +36,5 @@ div#services-content.row > div.col-md-4 {
 }
 div#services-content.row > div.col-md-4 img.service-image{
     width: 100%;
-    height: 100px;
     height: 200px;
 }
