@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
+{% block additional-styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock additional-styles %}
 {% block content %}
-<div class="content" id="home-content">
+<div class="container">
   <div class="row">
     <h1>Survey Tools</h1>
   </div>
-  <div class="row" id="services-content">
-    <div class="col-md-4">
+  <div class="row row-cols-3">
+    <div class="col">
       <a href="#">
         <img src="{% static 'img/calculating-acreage.png' %}" alt="" class="service-image">
         <p>Compute Area</p>
       </a>
     </div>
-    <div class="col-md-4">
+    <div class="col">
       <a href="#">
         <img src="{% static 'img/for-sale.jpg' %}" alt="" class="service-image">
         <p>Sell Land</p>
       </a>
     </div>
-    <div class="col-md-4">
+    <div class="col">
       <a href="#">
         <img src="{% static 'img/buy-land-now.jpg' %}" alt="" class="service-image">
         <p>Buy Land</p>
