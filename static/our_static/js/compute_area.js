@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     var point_numbers = 3;
     $("#add-coordinate-inputs").click(function (event) {
@@ -18,37 +19,13 @@ $(document).ready(function(){
         );
         $("input#point_number_input").attr("value", point_numbers.toString());
         $("span#point_number").text(point_numbers);
-
-    });
-    $("form#feedback_form").submit(function (event) {
-        event.preventDefault();
-        var name = $("input#feed_back_name").val();
-
-        var email = $("input#feed_back_email").val();
-
-        var message = $("textarea#feed_back_message").val();
-
-        message = message.replace(/(?:\n)/g, '<putNewLineHere>');
-
-        var feedback_url = $("input#feedback_url").val();
-
-        $("#feed_back_inputs").modal("toggle");
-
-        $.ajax({
-            url:feedback_url+"?name="+name+"&&email="+email+"&&message="+message,
-            success:function(data){
-                console.log(data);
-                $("#feedback_message").text(data["message"]);
-                $("#thank_you_feedback").modal("toggle");
-            }
-        })
     });
     var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
         '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'mapbox.streets'
+        id: 'mapbox.satellite'
     });
     var none_layer = L.tileLayer('', {
         maxZoom: 18,
