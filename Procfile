@@ -1,1 +1,1 @@
-web: gunicorn survey.wsgi --log-file -
+web: gunicorn surveytools.wsgi --log-file -
