@@ -2,22 +2,28 @@
 {% load static %}
 {% block content %}
 <div class="content" id="home-content">
-    <div class="row">
-        <h1>Survey Tools</h1>
+  <div class="row">
+    <h1>Survey Tools</h1>
+  </div>
+  <div class="row" id="services-content">
+    <div class="col-md-4">
+      <a href="#">
+        <img src="{% static 'img/calculating-acreage.png' %}" alt="" class="service-image">
+        <p>Compute Area</p>
+      </a>
     </div>
-    <div class="row" id="services-content">
-        <div class="col-md-4">
-            <img src="{% static 'img/calculating-acreage.png' %}" alt="" class="service-image">
-            Compute Area
-        </div>
-        <div class="col-md-4">
-            <img src="{% static 'img/for-sale.jpg' %}" alt="" class="service-image">
-            Sell Land
-        </div>
-        <div class="col-md-4">
-            <img src="{% static 'img/buy-land-now.jpg' %}" alt="" class="service-image">
-            Buy Land
-        </div>
+    <div class="col-md-4">
+      <a href="#">
+        <img src="{% static 'img/for-sale.jpg' %}" alt="" class="service-image">
+        <p>Sell Land</p>
+      </a>
     </div>
+    <div class="col-md-4">
+      <a href="#">
+        <img src="{% static 'img/buy-land-now.jpg' %}" alt="" class="service-image">
+        <p>Buy Land</p>
+      </a>
+    </div>
+  </div>
 </div>
 {% endblock content %}
