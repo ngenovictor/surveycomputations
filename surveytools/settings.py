@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'surveytools.herokuapp.com',
+    'localhost',
 ]
 
 
