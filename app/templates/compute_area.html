@@ -1,87 +1,81 @@
 {% extends "base.html" %}
 {% load static %}
 {% block additional-styles %}
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
-   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-   crossorigin=""/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin="" />
 {% endblock additional-styles %}
 {% block additional-scripts %}
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-   crossorigin=""></script>
-   <script type="text/javascript" src={% static 'js/compute_area.js' %}></script>
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+  crossorigin=""></script>
+<script type="text/javascript" src={% static 'js/compute_area.js' %}></script>
 {% endblock additional-scripts %}
 
 {% block content %}
-    {% if area %}
-        The area of {{ coordinates }} is <strong>{{ area }}</strong>.
-    {% endif %}
+{% if area %}
+The area of {{ coordinates }} is <strong>{{ area }}</strong>.
+{% endif %}
 
-    <div class="content">
-        <h1>Area computation</h1>
-        <div>
-            <p>Compute the area of a polygon given coordinate values</p>
+<div class="content">
+  <h1>Area computation</h1>
+  <div>
+    <p>Compute the area of a polygon given coordinate values</p>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md">
+      <form action="{% url 'compute_area' %}" method="post">{% csrf_token %}
+        <div class="btn btn-outline-success" id="add-coordinate-inputs">
+          Add More Form Inputs
         </div>
-        <hr>
+        <p>Current Number of Points: <span id="point_number">3(Default)</span></p>
+        <input type="number" hidden id="point_number_input" name="point_number" value="3">
         <div class="row">
-            <div class="col-md-4">
-                <form action="{% url 'compute_area' %}" method="post">{% csrf_token %}
-                    <div class="btn btn-outline-success" id="add-coordinate-inputs">
-                        Add More Form Inputs
-                    </div>
-                    <p>Current Number of Points: <span id="point_number">3(Default)</span></p>
-                    <input type="number" hidden id="point_number_input" name="point_number" value="3">
-                    <div class="row">
-                        <div class="row" id="point-inputs">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon">X1</div>
-                                    <input type="number" id="coordinateX1" name="coordinateX1" class="form-control"
-                                           required>
-                                </div>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Y1</div>
-                                    <input type="number" id="coordinateY1" name="coordinateY1" class="form-control"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon">X2</div>
-                                    <input type="number" id="coordinateX2" name="coordinateX2" class="form-control"
-                                           required>
-                                </div>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Y2</div>
-                                    <input type="number" id="coordinateY2" name="coordinateY2" class="form-control"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon">X3</div>
-                                    <input type="number" id="coordinateX3" name="coordinateX3" class="form-control"
-                                           required>
-                                </div>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Y3</div>
-                                    <input type="number" id="coordinateY3" name="coordinateY3" class="form-control"
-                                           required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container form-group col-md-3">
-                        <label for="precision">Define precision for the results</label>
-                        <input type="number" class="form-control" id="precision" name="precision">
-                    </div>
-                    <div class="container">
-                        <button type="submit" class="btn btn-outline-success">Compute Area</button>
-                    </div>
-                </form>
+          <div class="row" id="point-inputs">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">X1</div>
+                <input type="number" id="coordinateX1" name="coordinateX1" class="form-control" required>
+              </div>
+              <div class="input-group">
+                <div class="input-group-addon">Y1</div>
+                <input type="number" id="coordinateY1" name="coordinateY1" class="form-control" required>
+              </div>
             </div>
-            <div class="col-md-8" id="map">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">X2</div>
+                <input type="number" id="coordinateX2" name="coordinateX2" class="form-control" required>
+              </div>
+              <div class="input-group">
+                <div class="input-group-addon">Y2</div>
+                <input type="number" id="coordinateY2" name="coordinateY2" class="form-control" required>
+              </div>
             </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">X3</div>
+                <input type="number" id="coordinateX3" name="coordinateX3" class="form-control" required>
+              </div>
+              <div class="input-group">
+                <div class="input-group-addon">Y3</div>
+                <input type="number" id="coordinateY3" name="coordinateY3" class="form-control" required>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="container form-group col-md-3">
+          <label for="precision">Define precision for the results</label>
+          <input type="number" class="form-control" id="precision" name="precision">
+        </div>
+        <div class="container">
+          <button type="submit" class="btn btn-outline-success">Compute Area</button>
+        </div>
+      </form>
     </div>
+    <div class="col-md-8" id="map">
+    </div>
+  </div>
+</div>
 {% endblock content %}
